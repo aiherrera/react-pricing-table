@@ -1,42 +1,194 @@
-# React Component Library
+# Pricing table for React
 
-[![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/harvey/react-component-library)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+This is a ready-to-go UI component built for React applications.
 
-### **Note**: This is an simplified & customized fork from [react-component-library](https://github.com/HarveyD/react-component-library) by Harvey Delaney
+## Installation
 
-This project skeleton was created to help people get started with creating their own React component library using:
+Requires **React 16 or later**
 
-- [Rollup](https://github.com/rollup/rollup)
-- [Sass](https://sass-lang.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/) to help you create and show off your components
-- [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) enabling testing of the components
+`npm i --save @aiherrera/react-pricing-table`
 
-## Development
+`# or`
 
-### Testing
+`yarn add @aiherrera/react-pricing-table`
 
-```
-npm run test
-```
+## Demo
 
-### Building
+You can check all the configurations in this [playground](https://coderlab.aiherrera.com/?path=/story/playground-react-components--hamburger-menu)
+
+## Usage
+
+`{ PricingTable }`
 
 ```
-npm run build
-```
+// ES5 syntax
+const PricingTable = require('@aiherrera/react-pricing-table')
 
-### Storybook
-
-To run a live-reload Storybook server on your local machine:
-
-```
-npm run storybook
-```
-
-To export your Storybook as static files:
+// ES6 syntax
+import PricingTable from '@aiherrera/react-pricing-table'
 
 ```
-npm run storybook:build
+
+### Full example
+
+```typescript
+import React from 'react'
+import { IoCheckmark } from 'react-icons/io5'
+
+import PricingTable from '@aiherrera/react-pricing-table'
+
+const App = () => {
+
+  const plans = [
+    {
+      id: 'basic',
+      circle: 'B',
+      title: 'Basic',
+      subtitle: 'Best for personal websites',
+      price: 'MX$8,000',
+      discount: 'MX$6,500',
+      buttonText: 'Select plan',
+      popular: false,
+      features: (
+        <ul>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+        </ul>
+      )
+    },
+    {
+      id: 'standard',
+      circle: 'S',
+      title: 'Standard',
+      subtitle: 'Optimized for startups',
+      price: 'MX$12,000',
+      buttonText: 'Select plan',
+      popular: true,
+      features: (
+        <ul>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+        </ul>
+      )
+    },
+    {
+      id: 'premium',
+      circle: 'E',
+      title: 'Premium',
+      subtitle: 'Enterprise class website',
+      price: 'MX15,000',
+      buttonText: 'Select plan',
+      popular: false,
+      features: (
+        <ul>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+          <li>
+            <IoCheckmark />
+            <span>Lorem Ipsum</span>
+          </li>
+        </ul>
+      )
+    }
+  ]
+
+  const main = '#EEEEFC'
+  const features = '#A5A5F0'
+  const font = '#fff'
+  const fontInverted = '#000'
+  const background = '#fff'
+  const popular = '#7474E7
+  const checkMark = '#89ce94'
+
+  const handleClick = (e) => {
+    console.log(e)
+  }
+
+  return (
+    <>
+      <PricingTableComponent
+        plans={plans}
+        color={{
+          main,
+          features,
+          font,
+          fontInverted,
+          background,
+          popular,
+          checkMark
+        }}
+        handleClick={handleClick}
+      />
+    </>
+  )
+}
 ```
+
+## Props
+
+All these props are passed as defaults and can be overriden any time.
+
+| Name  | Type   | Unit | Description                                | Default |
+| ----- | ------ | ---- | ------------------------------------------ | ------- |
+| plans | array  | N/A  | An array with the desired plans to include |         |
+| color | object | N/A  | An object with all the colors <br>         |
+
+##### These are the colors passed in the color object to customize the pricing table
+
+| **main**: main color
+| **font**: color of the font
+| **fontInverted**: color of the font to contrast popular background
+| **background**: color of the header background
+| **popular**: color of the best offer or the most popular
+| **features**: color of the features text
+| **checkmark**: color of the features icon

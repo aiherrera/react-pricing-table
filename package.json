@@ -1,7 +1,7 @@
 {
-  "name": "@aiherrera/create-react-library",
+  "name": "@aiherrera/react-pricing-table",
   "version": "1.0.0",
-  "description": "A simple configuration for creating react libraries",
+  "description": "A simple & easy to use pricing table",
   "license": "MIT",
   "author": {
     "name": "Alain Iglesias",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aiherrera/create-react-library.git"
+    "url": "git+https://github.com/aiherrera/react-pricing-table.git"
   },
   "keywords": [
     "react",
-    "library",
-    "react-library",
+    "pricing",
+    "pricing-table",
     "component"
   ],
   "module": "build/index.esm.js",
