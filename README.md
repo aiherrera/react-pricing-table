@@ -1,6 +1,6 @@
 # Pricing table for React
 
-This is a ready-to-go UI component built for React applications.
+A simple and easy to use react pricing table
 
 ## Installation
 
