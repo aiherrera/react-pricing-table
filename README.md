@@ -181,14 +181,16 @@ All these props are passed as defaults and can be overriden any time.
 | Name  | Type   | Unit | Description                                | Default |
 | ----- | ------ | ---- | ------------------------------------------ | ------- |
 | plans | array  | N/A  | An array with the desired plans to include |         |
-| color | object | N/A  | An object with all the colors <br>         |
+| color | object | N/A  | An object with all the colors <br>         |         |
 
 ##### These are the colors passed in the color object to customize the pricing table
 
-| **main**: main color
-| **font**: color of the font
-| **fontInverted**: color of the font to contrast popular background
-| **background**: color of the header background
-| **popular**: color of the best offer or the most popular
-| **features**: color of the features text
-| **checkmark**: color of the features icon
+<ul>
+  <li>main: main color</li>
+  <li>font: color of the font</li>
+  <li>fontInverted: color of the font to contrast popular background</li>
+  <li>background: color of the header background</li>
+  <li>popular: color of the best offer or the most popular</li>
+  <li>features: color of the features text</li>
+  <li>checkmark: color of the features icon</li>
+</ul>
